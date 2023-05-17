@@ -53,7 +53,7 @@ class ResidentPage extends StatelessWidget {
                 ),
                 _buildMenuItem(
                   context,
-                  'Lipia Hapa',
+                  'Payment',
                   Icons.payment,
                   '/payment',
                 ),

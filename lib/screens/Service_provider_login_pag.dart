@@ -3,8 +3,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:municipal_cms/auth.dart';
-import 'package:municipal_cms/serviceprovider_registration_page.dart';
+import 'package:municipal_cms/service/auth.dart';
+import 'package:municipal_cms/screens/serviceprovider_registration_page.dart';
 import 'package:provider/provider.dart';
 import 'service_provider_page.dart';
 

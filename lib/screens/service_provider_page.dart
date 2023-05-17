@@ -34,7 +34,7 @@ class ServiceProviderPage extends StatelessWidget {
                   TextButton(
                       onPressed: (() => _ViewSchedule(context)),
                       child: const Text(
-                          "view cleaning service Task schedule here...")),
+                          "Upload Task schedule here...")),
                   Center(
                     child: SingleChildScrollView(
                       child: SizedBox(

@@ -1,11 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:municipal_cms/Service_provider_login_pag.dart';
-import 'package:municipal_cms/auth.dart';
-import 'package:municipal_cms/lipia_hapa.dart';
-import 'package:municipal_cms/municipality_login_page.dart';
-import 'package:municipal_cms/task.dart';
+import 'package:municipal_cms/screens/Service_provider_login_pag.dart';
+import 'package:municipal_cms/service/auth.dart';
+import 'package:municipal_cms/screens/lipia_hapa.dart';
+import 'package:municipal_cms/screens/municipality_login_page.dart';
+import 'package:municipal_cms/screens/task.dart';
 import 'package:provider/provider.dart';
 import 'resident_login_page.dart';
 

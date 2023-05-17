@@ -9,7 +9,7 @@ class LipaHapaPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Lipia Hapa'),
+        title: const Text('payment'),
         backgroundColor: Colors.black,
       ),
       body: Container(
@@ -39,7 +39,7 @@ class LipaHapaPage extends StatelessWidget {
                               children: [
                                 TextFormField(
                                   decoration: const InputDecoration(
-                                    labelText: 'Ingiza Anwani ya makazi',
+                                    labelText: 'Physical address',
                                   ),
                                   validator: (value) {
                                     if (value!.isEmpty) {

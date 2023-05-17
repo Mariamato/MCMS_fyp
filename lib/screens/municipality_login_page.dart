@@ -3,9 +3,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:municipal_cms/Municipality_page.dart';
-import 'package:municipal_cms/auth.dart';
-import 'package:municipal_cms/municipality_registration_page.dart';
+import 'package:municipal_cms/screens/Municipality_page.dart';
+import 'package:municipal_cms/service/auth.dart';
+import 'package:municipal_cms/screens/municipality_registration_page.dart';
 import 'package:provider/provider.dart';
 
 class MunicipalityLoginPage extends StatelessWidget {

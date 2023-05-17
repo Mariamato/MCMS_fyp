@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:municipal_cms/auth.dart';
+import 'package:municipal_cms/service/auth.dart';
 import 'package:provider/provider.dart';
 
 class ResidentRegistrationPage extends StatelessWidget {

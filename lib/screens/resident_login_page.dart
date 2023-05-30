@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:municipal_cms/service/auth.dart';
 import 'package:provider/provider.dart';
 import 'resident_page.dart';
-import 'resident_registration_page.dart';
+import 'Resident_registration_page.dart';
 
 class ResidentLoginPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
@@ -43,7 +43,7 @@ class ResidentLoginPage extends StatelessWidget {
 
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ResidentRegistrationPage()),
+      MaterialPageRoute(builder: (context) => RegistrationPage()),
     );
   }
 
@@ -51,7 +51,7 @@ class ResidentLoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Resident Login'),
+        title: const Text('ResidentLogin'),
       ),
       body: Container(
         height: 10000.0,

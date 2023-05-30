@@ -7,7 +7,7 @@ import 'package:municipal_cms/screens/lipia_hapa.dart';
 import 'package:municipal_cms/screens/municipality_login_page.dart';
 import 'package:municipal_cms/screens/task.dart';
 import 'package:provider/provider.dart';
-import 'resident_login_page.dart';
+import 'Resident_login_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'MunicipalCms',
+      title: 'Municipal Cleaning Management App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -127,13 +127,13 @@ class MyHomePage extends StatelessWidget {
                         context,
                         'Service Provider',
                         Icons.local_car_wash,
-                        '/ServiceProviderLoginpage',
+                       '/resident',
                       ),
                       _buildMenuItem(
                         context,
                         'Municipality',
                         Icons.location_city_rounded,
-                        '/Municipality',
+                       '/resident',
                       ),
                     ],
                   );

@@ -3,26 +3,55 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:municipal_cms/service/auth.dart';
 import 'package:provider/provider.dart';
+import 'package:dio/dio.dart';
 
-class ResidentRegistrationPage extends StatelessWidget {
+class RegistrationPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _municipalityNameController =
-      TextEditingController();
-  final TextEditingController _ConfirmPasswordController =
-      TextEditingController();
+  final TextEditingController _municipalityNameController =TextEditingController();
+  final TextEditingController _ConfirmPasswordController = TextEditingController();
   final TextEditingController _contactController = TextEditingController();
-  final TextEditingController _physicalAddressController =
-      TextEditingController();
+  final TextEditingController _physicalAddressController = TextEditingController();
   final TextEditingController _fullNameController = TextEditingController();
   bool _showPassword = false;
   final _formKey = GlobalKey<FormState>();
 
-  void _register(BuildContext context) {
+  void _register(BuildContext context) async {
     final Form = _formKey.currentState;
     String password = _passwordController.text;
     String confirmPassword = _ConfirmPasswordController.text;
+    String fullName = _fullNameController.text;
+    String email = _emailController.text;
+    String phoneNumber = _contactController.text;
+    String municipality = _municipalityNameController.text;
+    String location = _physicalAddressController.text;
     var form;
+
+    // Send a POST request to your Laravel API for resident registration
+
+    try {
+      Dio dio = Dio();
+      dio.options.baseUrl = 'http://127.0.0.1:8000/api/';
+      dio.options.headers['accept'] = {
+        'Applicatio/json'
+        // Add any other required headers
+      };
+      Response response = await dio.post('register', data: {
+        'FullName': fullName,
+        'email': email,
+        'password': password,
+        'Location': location,
+        'PhoneNumber': phoneNumber,
+        'MunicipalityName': municipality,
+       // 'ConfirmPassword':confirmPassword,
+      });
+
+      // Handle the response and any further actions (e.g., displaying success message)
+      print(response.data);
+    } catch (error) {
+      // Handle any errors (e.g., displaying error message)
+      print(error);
+    }
     if (form.validate()) {
       form.save;
       if (password != confirmPassword) {
@@ -45,7 +74,7 @@ class ResidentRegistrationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Jisajili hapa'),
+          title: const Text('Jisajili '),
         ),
         body: Container(
           height: 10000.0,
@@ -162,11 +191,11 @@ class ResidentRegistrationPage extends StatelessWidget {
                                 TextFormField(
                                   controller: _physicalAddressController,
                                   decoration: const InputDecoration(
-                                      labelText: 'Physical Address',
+                                      labelText: 'location',
                                       icon: Icon(Icons.mail)),
                                   validator: (value) {
                                     if (value!.isEmpty) {
-                                      return 'Please enter your Physical address';
+                                      return 'Please enter your Location';
                                     }
                                     return null;
                                   },
@@ -184,11 +213,14 @@ class ResidentRegistrationPage extends StatelessWidget {
                                       Map creds = {
                                         'email': _emailController.text,
                                         'password': _passwordController.text,
-                                        'Phone number': _contactController.text,
-                                        'Physical address': _physicalAddressController.text,
-                                        'Municipality name': _municipalityNameController.text,
-                                        'Cornfirm password':_ConfirmPasswordController.text,
-                                        'device name': 'mobile',
+                                        'PhoneNumber': _contactController.text,
+                                        'Location':
+                                            _physicalAddressController.text,
+                                        'MunicipalityName':
+                                            _municipalityNameController.text,
+                                        'CornfirmPassword':
+                                            _ConfirmPasswordController.text,
+                                        'DeviceName': 'mobile',
                                       };
                                       if (_formKey.currentState != null) {
                                         if (_formKey.currentState!.validate()) {
